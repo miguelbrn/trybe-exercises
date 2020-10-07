@@ -1,4 +1,4 @@
 let student = "Miguel";
 let studentskills = 10;
-
-console.log("Sucesso1");
+//Eu sou Tryber e estou estudando Git/GitHub.
+console.log("Sucesso");
