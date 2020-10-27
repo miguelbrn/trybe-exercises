@@ -1,9 +1,10 @@
 let n = 5;
-let output = '';
-let symbol = '*';
+let output = "";
+let symbol = "*";
 for (let i = 0; i < n; i++) {
-    output += symbol;
+  output += symbol;
 }
-for (let i = 0; i < n; i++ ) {
-    console.log(output)
+
+for (let i = 0; i < n; i++) {
+  console.log(output);
 }
