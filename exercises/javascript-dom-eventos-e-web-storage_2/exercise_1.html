@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // COLOQUE SEU CÓDIGO AQUI
+      let listNumber = ['Um', 'Dois', 'Três', 'Quatro', 'Cinco', 'Seis', 'Sete', 'Oito', 'Nove', 'Dez'];
+      
+      titleOne = document.createElement("h1");
+      titleOne.className = "title";
+      document.body.appendChild(titleOne);
+
+      divMainContent = document.createElement("div");
+      divMainContent.className = "main-content";
+      document.body.appendChild(divMainContent);
+      
+      divCenterContent = document.createElement("div");
+      divCenterContent.className = "center-content";
+      document.querySelector(".main-content").appendChild(divCenterContent);
+
+      textDiv = document.createElement("p");
+      //textDiv.innerText = "Hello, World, Welcome Trybe!!!";
+      document.querySelector(".center-content").appendChild(textDiv).innerText = "Olá Mundo, Bem vindo Trybe!!";
+
+      leftContent = document.createElement("div");
+      leftContent.className = "left-content";
+      document.querySelector(".main-content").appendChild(leftContent);
+
+      rightContent = document.createElement("div");
+      rightContent.className = "right-content";
+      document.querySelector(".main-content").appendChild(rightContent);
+
+      smalImage = document.createElement("a");
+      smalImage.className = "small-image"
+      smalImage.setAttribute("src", "https://picsum.photos/200")
+      document.querySelector(".left-content").appendChild(smalImage);
+      
+      list = document.createElement("ul");
+      document.querySelector(".right-content").appendChild(list);
+
+      for (let index = 0; index < listNumber.length; index += 1) {
+        listItem = document.createElement("li");
+        listItem.innerText = listNumber[index];
+
+        document.querySelector("ul").appendChild(listItem);
+
+        let childsList = document.querySelector("ul").childNodes
+        if (childsList.length >= 9) {
+        document.querySelector("ul").removeChild(listItem);
+      }
+      }
+
+      for (let index = 0; index <= 2; index += 1) {
+        let title = document.createElement("h3");
+        title.className = "description";
+        document.querySelector(".main-content").appendChild(title);
+      }
+
+      document.querySelector(".main-content").removeChild(leftContent);
+
+      document.querySelector(".right-content").style.marginRight = "auto";
+
+      document.querySelector(".center-content").parentNode.style.backgroundColor = "green";
+    </script>
+  </body>
+</html>
