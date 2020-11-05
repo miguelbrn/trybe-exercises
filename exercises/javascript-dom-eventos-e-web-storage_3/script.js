@@ -35,12 +35,15 @@ function createDaysOfTheWeek() {
   }
 
   //Exercicio 2
-
+  function holidayButton (str) {
   let buttonHoliday = document.createElement("BUTTON");
-  buttonHoliday.innerText = "Feriados";
+  let buttonsContainer = document.querySelector('.buttons-container')
+  buttonHoliday.innerText = str;
   buttonHoliday.id = 'btn-holiday';
-  document.querySelector('.buttons-container').appendChild(buttonHoliday)
+  buttonsContainer.appendChild(buttonHoliday)
+  }
 
+  holidayButton("Feriados")
   //Exercicio 3
 
   function changeBgColor() {
