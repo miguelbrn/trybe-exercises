@@ -6,4 +6,4 @@ let factorial = (number) => {
   }
 }
 
-console.log(factorial(3))
+console.log(`O fatorial é ${factorial(3)}`)
