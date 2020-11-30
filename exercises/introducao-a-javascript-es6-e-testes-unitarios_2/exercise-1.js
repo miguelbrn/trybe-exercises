@@ -36,12 +36,12 @@ const order = {
 
 const customerInfo = (order) => {
   // Adicione abaixo as informações necessárias.
-  let deliveryPerson = order.order.delivery.deliveryPerson
-  let name = order.name
-  let phoneNumber = order.phoneNumber
-  let address = order.address.street
-  let homeNumber = order.address.number
-  let apNumber = order.address.apartment  
+  let deliveryPerson = order.order.delivery.deliveryPerson;
+  let name = order.name;
+  let phoneNumber = order.phoneNumber;
+  let address = order.address.street;
+  let homeNumber = order.address.number;
+  let apNumber = order.address.apartment;  
   return `Olá ${deliveryPerson}, entrega para: ${name}, Telefone: ${phoneNumber}, R. ${address}, Nº: ${homeNumber}, AP: ${apNumber} `
 }
 
