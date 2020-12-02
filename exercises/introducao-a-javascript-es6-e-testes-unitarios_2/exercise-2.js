@@ -21,7 +21,7 @@ const lesson3 = {
 // Crie uma função para adicionar o turno da manhã na lesson2 . Essa função deve possuir três parâmetros, sendo eles: o objeto a ser modificado, a chave que deverá ser adicionada e o valor dela.
 
 const addTurn = (object, key, value) => {
-  object[key] = value
+  object[key] = value;
 }
 
 // addTurn(lesson2, 'turno', 'manhã');
@@ -41,7 +41,7 @@ const listKey = (object) => {
 
 const objectTam = (object) => {
   const obj = Object.keys(object).length;
-  return obj
+  return obj;
 }
 
 // console.log(objectTam(lesson2))
@@ -50,15 +50,24 @@ const objectTam = (object) => {
 
 const objectValues = (object) => {
   const obj = Object.values(object);
-  return obj
+  return obj;
 }
 
 // console.log(objectValues(lesson2))
 
 // Crie um objeto de nome allLessons , que deve agrupar todas as aulas através do Object.assign . Cada chave desse novo objeto será uma aula, sendo essas chaves: lesson1 , lesson2 e lesson3 . Ao executar o comando console.log(allLessons) , a saída deverá ser a seguinte:
 
-let allLessons = Object.assign({}, lesson1);
-allLessons = object.assign({}, lesson2);
+const allLessons = {lesson1, lesson2, lesson3};
 
-console.log(allLessons)
+// Usando o objeto criado no exercício 5, crie uma função que retorne o número total de estudantes em todas as aulas.
+
+const totalNum = (object) => {
+  const total = object.lesson1.numeroEstudantes + object.lesson2.numeroEstudantes + object.lesson3.numeroEstudantes;
+  return total;
+}
+
+// console.log(totalNum(allLessons))
+
+// Crie uma função que obtenha o valor da chave de acordo com a sua posição no objeto.
+
 
