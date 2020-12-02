@@ -36,12 +36,12 @@ const order = {
 
 const customerInfo = (order) => {
   // Adicione abaixo as informações necessárias.
-  let deliveryPerson = order.order.delivery.deliveryPerson;
-  let name = order.name;
-  let phoneNumber = order.phoneNumber;
-  let address = order.address.street;
-  let homeNumber = order.address.number;
-  let apNumber = order.address.apartment;  
+  const deliveryPerson = order.order.delivery.deliveryPerson;
+  const name = order.name;
+  const phoneNumber = order.phoneNumber;
+  const address = order.address.street;
+  const homeNumber = order.address.number;
+  const apNumber = order.address.apartment;  
   return `Olá ${deliveryPerson}, entrega para: ${name}, Telefone: ${phoneNumber}, R. ${address}, Nº: ${homeNumber}, AP: ${apNumber} `
 }
 
@@ -49,9 +49,12 @@ customerInfo(order);
 
 const orderModifier = (order) => {
   // Adicione abaixo as informações necessárias.
-
+  order.name = 'Luiz Silva';
+  order.payment.total = 50.00;
+  return `Olá ${order.name}, o seu pedido de muzzarela, calabresa e Coca-Cola Zero é R$${order.payment.total},00.`
 }
 
 orderModifier(order);
 
-console.log(customerInfo(order))
+console.log(orderModifier(order))
+// console.log(Object.values(order))
