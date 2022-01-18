@@ -1,3 +1,5 @@
+# Exercício 6: Crie uma função que receba os três lados de um triângulo e informe qual o tipo de triâgulo formado ou "não é triangulo" , caso não seja possível formar um triângulo.
+
 def tipoDeTriangulo(lado1, lado2, lado3):
   ehTriangulo = (
     lado1 + lado2 > lado3 and
