@@ -15,14 +15,24 @@ const doMath = (a, b, c) => {
   return promise;
 }
 
-doMath(10, 10, 10)
-  .then(resolve => console.log(resolve))
-  .catch(error => console.log(error))
+const getRamdom = () => {
+  const randomNumber = Math.floor(Math.random() * 100 + 1);
+  return randomNumber;
+}
 
-doMath(1, 1, 'a')
-  .then(resolve => console.log(resolve))
-  .catch(error => console.log(error))
+const callDoMath = () => {
+  const randomNumbers = Array.from({ length: 3 }).map(getRamdom)
+  doMath(...randomNumbers)
+    .then(result => console.log(result))
+    .catch(error => console.log(error.messsage))
+}
 
-doMath(1, 1, 1)
-  .then(resolve => console.log(resolve))
-  .catch(error => console.log(error))
+const callDoMathWhitAsync = async () => {
+  const randomNumbers = Array.from({ length: 3 }).map(getRamdom)
+  try {
+    const result = await doMath(...randomNumbers)
+    console.log(result)
+  } catch (error) {
+    console.error(error)
+  }
+}
